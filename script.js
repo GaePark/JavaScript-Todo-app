@@ -61,13 +61,16 @@ const createList = (todo) => {
   todoCheck.addEventListener("change", () => {
     todo.complete = todoCheck.checked;
     saveToLocalStorage();
-
     if (todo.complete) {
       todoText.classList.add("complete");
     } else {
       todoText.classList.remove("complete");
     }
   });
+
+  if (todo.complete) {
+    todoText.classList.add("complete");
+  }
 
   todoText.addEventListener("blur", () => {
     todoText.setAttribute("disabled", "");
